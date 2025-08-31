@@ -53,19 +53,31 @@ app.get('/', (req, res) => {
 // MongoDB connection
 const MONGO_URI = 'mongodb+srv://dinakaran212004_db_user:Dina212004@cluster0.grsxpc6.mongodb.net/Billing_Soft?retryWrites=true&w=majority&appName=Cluster0';
 
+// MONGO_URI = 'mongodb+srv://dinakaran212004_db_user:Dina212004@cluster0.grsxpc6.mongodb.net/BillMate?retryWrites=true&w=majority&appName=Cluster0';
 
-mongoose.connect(MONGO_URI)
-  .then(async () => {
-    console.log('✅ MongoDB connected');
 
-    const existingAdmin = await Admin.findOne({ username: 'admin' });
-    if (!existingAdmin) {
-      const defaultAdmin = new Admin({ username: 'admin', password: 'password' });
-      await defaultAdmin.save();
-      console.log('✅ Default admin created');
-    }
-  })
-  .catch(err => console.error('❌ MongoDB connection error:', err));
+// mongoose.connect(MONGO_URI)
+//   .then(async () => {
+//     console.log('✅ MongoDB connected');
+
+//     const existingAdmin = await Admin.findOne({ username: 'admin' });
+//     if (!existingAdmin) {
+//       const defaultAdmin = new Admin({ username: 'admin', password: 'password' });
+//       await defaultAdmin.save();
+//       console.log('✅ Default admin created');
+//     }
+//   })
+//   .catch(err => console.error('❌ MongoDB connection error:', err));
+
+//   const mongoose = require("mongoose");
+
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log("✅ MongoDB connected"))
+.catch(err => console.error("❌ MongoDB connection error:", err));
+
 
 // Create upload directories
 const uploadDirs = [
