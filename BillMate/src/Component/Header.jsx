@@ -14,6 +14,7 @@ const Header = () => {
                 const res = await Api.get('/companies');
                 if (res.data?.length > 0) {
                     setCompany(res.data[0]);
+                    
                 }
             } catch (error) {
                 console.error('Error fetching company info:', error);
