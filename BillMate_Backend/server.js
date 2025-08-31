@@ -51,9 +51,7 @@ app.get('/', (req, res) => {
 });
 
 // MongoDB connection
-const MONGO_URI = 'mongodb+srv://dinakaran212004_db_user:Dina212004@cluster0.grsxpc6.mongodb.net/Billing_Soft?retryWrites=true&w=majority&appName=Cluster0';
-
-// MONGO_URI = 'mongodb+srv://dinakaran212004_db_user:Dina212004@cluster0.grsxpc6.mongodb.net/BillMate?retryWrites=true&w=majority&appName=Cluster0';
+// const MONGO_URI = 'mongodb+srv://dinakaran212004_db_user:Dina212004@cluster0.grsxpc6.mongodb.net/Billing_Soft?retryWrites=true&w=majority&appName=Cluster0';
 
 
 // mongoose.connect(MONGO_URI)
