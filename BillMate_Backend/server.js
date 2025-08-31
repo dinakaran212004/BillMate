@@ -51,8 +51,10 @@ app.get('/', (req, res) => {
 });
 
 // MongoDB connection
-const mongoURI = 'mongodb+srv://dinakaran212004_db_user:Dina212004@cluster0.grsxpc6.mongodb.net/Billing_Soft?retryWrites=true&w=majority&appName=Cluster0';
-mongoose.connect(mongoURI)
+const MONGO_URI = 'mongodb+srv://dinakaran212004_db_user:Dina212004@cluster0.grsxpc6.mongodb.net/Billing_Soft?retryWrites=true&w=majority&appName=Cluster0';
+
+
+mongoose.connect(MONGO_URI)
   .then(async () => {
     console.log('✅ MongoDB connected');
 
